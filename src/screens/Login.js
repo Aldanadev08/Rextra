@@ -15,7 +15,7 @@ export default function Login() {
   React.useEffect(() => {
     // Animación del logo
     Animated.loop(
-      Animated.sequence([
+      Animated.sequence([ 
         Animated.timing(scale, {
           toValue: 1,
           duration: 1500,
@@ -73,8 +73,8 @@ export default function Login() {
       
       <Animated.View style={{ opacity: fadeIn }}>
         <Animated.Image
-          source={{ uri: 'https://cdn-icons-png.flaticon.com/512/1869/1869315.png' }}
-          style={[styles.logo, { transform: [{ scale }] }]}
+    source={{ uri: 'https://cdn.iconscout.com/icon/free/png-256/robot-234-458344.png' }} // Imagen PNG de robot desde IconScout
+    style={[styles.logo, { transform: [{ scale }] }]}
           resizeMode="contain"
         />
       </Animated.View>
@@ -118,17 +118,18 @@ export default function Login() {
           </TouchableOpacity>
         </Animated.View>
 
-            <TouchableOpacity 
-            onPress={() => navigation.navigate('Register')} // 'Register' debe coincidir con el nombre en Navigation.js
-        style={styles.secondaryButton}
-        >
-        <Text style={styles.secondaryButtonText}>Crear una cuenta</Text>
-        </TouchableOpacity>
         <TouchableOpacity 
-  onPress={() => navigation.navigate('ForgotPassword')}
->
-  <Text style={styles.link}>¿Olvidaste tu contraseña?</Text>
-</TouchableOpacity>
+          onPress={() => navigation.navigate('Register')}
+          style={styles.secondaryButton}
+        >
+          <Text style={styles.secondaryButtonText}>Crear una cuenta</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity 
+          onPress={() => navigation.navigate('ForgotPassword')}
+        >
+          <Text style={styles.link}>¿Olvidaste tu contraseña?</Text>
+        </TouchableOpacity>
       </Animated.View>
 
       {/* Elementos decorativos */}
